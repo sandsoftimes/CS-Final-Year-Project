@@ -1,0 +1,24 @@
+@startuml
+start
+:User Chooses OCR Model;
+repeat
+  :User Provides Prescription Document;
+  :Checking Document Format;
+  if (Format Correct) then (Yes)
+    :Processing Document;
+    :OCR Model Scans Document using OpenCV and Pytesseract;
+    if (Readable Form) then (Yes)
+      :Characterizing Medicines using Database Directly;
+    else
+      ->No;
+      :Identifying Medicines using Knowledge Graphs, ML Models and BERT Specifically;
+    endif
+  else
+    ->No;
+    :Alert "Format Incorrect";
+  endif
+repeat while (Readable Format (no))
+:(Finalizing the Response?);
+:Displaying the Response to the User;
+stop
+@enduml

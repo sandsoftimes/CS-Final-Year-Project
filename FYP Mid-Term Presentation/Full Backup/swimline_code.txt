@@ -1,0 +1,15 @@
+@startuml
+actor       Actor       as Foo1
+Foo1 -> "Web Application":OCR Model 
+Foo1 -> "Web Application":User Document
+
+"Web Application" -> "Prescription System" : Document Format
+"Prescription System" -> "Classification Models": Perform Initial Processing
+"Classification Models" -> "Classification Models" : Applying ML MODELS (BERT) and \nKnowledge Graphs
+"Classification Models" --> "Prescription System": Recieve Text  
+"Prescription System" -> "Medicine Database": Perform Search
+"Medicine Database" --> "Prescription System" : Retrieve Data
+"Prescription System" --> "Prescription System": Finalize Prescription 
+"Prescription System" --> "Web Application": Recieve Response 
+"Web Application" -> Foo1: Display Responses
+@enduml

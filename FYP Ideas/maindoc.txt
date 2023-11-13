@@ -1,0 +1,30 @@
+Project Title: Docigize: An innovative solution for extracting entities from unstructured handwritten bilingual medical prescriptions
+
+Sub-Information: 
+
+we embarked on a groundbreaking R&D project aimed at addressing the local challenge of digitizing medical prescriptions and converting them into structured formats.
+
+Usage-And-Focus: 
+
+Our FYP primarily focused on the digitization of medical prescriptions, which holds tremendous potential for impact. This technology can greatly assist hospitals, doctors, and health policymakers in comprehending the medical landscape and may open up vast research opportunities.
+
+Accomplishment-Of-Project:
+
+Some notable accomplishments of our team include:
+
+-Creation of a synthetic dataset comprising various medical prescription layouts.
+
+-Fine-tuning Object Detection models for handwritten text detection in both English and Urdu languages.
+
+-Development of ViLanOCR, a novel OCR system, revolutionizes Urdu handwriting extraction with its state-of-the-art performance. This bilingual OCR excels in extracting both English and Urdu text seamlessly. 
+Notably, ViLanOCR introduces a remarkable single-shot approach, enabling it to extract full-page text in a single pass.
+
+-Medical domain-specific fine-tuning of Document AI methods, such as Layout Language Models, for identifying medical entities from documents.
+
+-Adherence to MLOps principles, including the development of a comprehensive CI/CD pipeline and deployment of the application on the AWS cloud
+
+For Testing Project Visit: https://huggingface.co/spaces/musadac/VilanOCR-Urdu-English-Chinese
+
+Originally-Done-By-FAST-BATCH-19-Ali-Kamal
+
+

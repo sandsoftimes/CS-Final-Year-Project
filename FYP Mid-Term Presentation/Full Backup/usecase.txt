@@ -1,0 +1,37 @@
+@startuml
+actor User as U
+rectangle "OCR System" {
+  usecase "Choose OCR Model" as UC1
+  usecase "Provide Prescription Document" as UC2
+  usecase "Check Document Format" as UC3
+  usecase "Process Document" as UC4
+  usecase "Scan Document" as UC5
+  usecase "Characterize Medicine" as UC6
+  usecase "Identify Medicine" as UC7
+  usecase "Finalize Response" as UC9
+  usecase "Display Response" as UC10
+}
+
+rectangle "Medicine Database" {
+  usecase "Perform Search" as UC11
+  usecase "Matches Medicine" as UC12
+  }
+
+U --> UC1 : Uses >
+U --> UC2 : Uses >
+U --> UC10 : View Response >
+UC2 --> UC3 : Validates >
+UC1 --> UC2 : Initiates >
+UC3 --> UC4 : Initiates >
+UC4 --> UC5 : Initiates >
+UC5 --> UC6 : Extends >
+UC5 --> UC7 : Extends >
+UC6 --> UC9 : Initiates >
+UC6 --> UC11 : Initiates > 
+UC11 --> UC12 : Extends >
+UC12 --> UC6 : Returns Data >
+actor "Knowledge Graph, ML Models(BERT)" as U2
+U2 --> UC7 : Data Identification Techniques
+UC7 --> UC9 : Inititates >
+UC9 --> UC10 : Includes >
+@enduml
